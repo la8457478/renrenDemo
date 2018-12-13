@@ -1,0 +1,137 @@
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <properties resource="application-dev.yml"/>
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+            <property name="caseSensitive" value="true"/>
+            <property name="lombok" value="Getter,Setter,ToString,Accessors"/>
+            <property name="useMapperCommentGenerator " value="true"/>
+        </plugin>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://182.151.13.201:3306/new_qualtiy"
+                        userId="root"
+                        password="root9580">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="io.renren.mybatis.model"
+                            targetProject="src/main/java"/>
+
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="src/main/resources/mapper"/>
+
+        <javaClientGenerator targetPackage="io.renren.mybatis.mapper"
+                             targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+
+        <table tableName="adjust_time">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="cache_version">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="city">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="company">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="designphase">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="designphase_ref_meet_templates">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="designphase_state">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="detailsphase">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="district">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="extra_desc">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="field_major">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="field_service">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="image">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="issue">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="log_entity">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="main_place">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="major">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="meet_template">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="meeting">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="place">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="meeting_desc">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="problem_classify">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="project">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="province">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="role">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="score_flow">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="score_result">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="system_resource">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="system_resource_ref_role">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="system_user_ref_role">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="user">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="user_ref_role">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="user_ref_role_ref_company">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+    </context>
+</generatorConfiguration>

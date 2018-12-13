@@ -8,9 +8,11 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Import;
+import tk.mybatis.spring.annotation.MapperScan;
 
 
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
+@MapperScan(basePackages="io.renren.modules.mapper")
 @Import({DynamicDataSourceConfig.class})
 public class RenrenApplication extends SpringBootServletInitializer {
 

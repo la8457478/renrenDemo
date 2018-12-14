@@ -1,16 +1,16 @@
 package io.renren.modules.sys.service.impl;
 
 import io.renren.common.utils.Constant;
+import io.renren.modules.mapper.UserMapper;
+import io.renren.modules.model.User;
 import io.renren.modules.sys.dao.SysMenuDao;
 import io.renren.modules.sys.dao.SysUserDao;
-import io.renren.modules.sys.dao.SysUserTokenDao;
 import io.renren.modules.sys.entity.SysMenuEntity;
-import io.renren.modules.sys.entity.SysUserEntity;
-import io.renren.modules.sys.entity.SysUserTokenEntity;
 import io.renren.modules.sys.service.ShiroService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.*;
 
@@ -20,9 +20,9 @@ public class ShiroServiceImpl implements ShiroService {
     private SysMenuDao sysMenuDao;
     @Autowired
     private SysUserDao sysUserDao;
-    @Autowired
-    private SysUserTokenDao sysUserTokenDao;
 
+    @Autowired
+    private UserMapper userMapper;
     @Override
     public Set<String> getUserPermissions(long userId) {
         List<String> permsList;
@@ -49,12 +49,15 @@ public class ShiroServiceImpl implements ShiroService {
     }
 
     @Override
-    public SysUserTokenEntity queryByToken(String token) {
-        return sysUserTokenDao.queryByToken(token);
+    public User queryByToken(String token) {
+        Example example = new Example(User.class);
+        example.createCriteria()
+                .andEqualTo("token", token);
+        return userMapper.selectOneByExample(example);
     }
 
     @Override
-    public SysUserEntity queryUser(Long userId) {
-        return sysUserDao.selectById(userId);
+    public User queryUser(Long id) {
+        return userMapper.selectByPrimaryKey(id);
     }
 }

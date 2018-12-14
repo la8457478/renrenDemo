@@ -1,11 +1,16 @@
 package io.renren.modules.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.Date;
-
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "user")
 public class User {
     @Id
@@ -16,11 +21,11 @@ public class User {
 
     private String creator;
 
-    @Column(name = "account_expiring_date")
-    private Date accountExpiringDate;
+    @Column(name = "token_update_time")
+    private String tokenUpdateTime;
 
-    @Column(name = "credentials_expiring_date")
-    private Date credentialsExpiringDate;
+    @Column(name = "token_expiring_time")
+    private String tokenExpiringTime;
 
     private String email;
 
@@ -45,6 +50,17 @@ public class User {
 
     @Column(name = "role_id")
     private Long roleId;
+
+    @Column(name = "token")
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
 
     /**
      * @return id
@@ -91,29 +107,27 @@ public class User {
     /**
      * @return account_expiring_date
      */
-    public Date getAccountExpiringDate() {
-        return accountExpiringDate;
+    public String getTokenUpdateTime() {
+        return tokenUpdateTime;
     }
 
     /**
-     * @param accountExpiringDate
      */
-    public void setAccountExpiringDate(Date accountExpiringDate) {
-        this.accountExpiringDate = accountExpiringDate;
+    public void setTokenUpdateTime(String tokenUpdateTime) {
+        this.tokenUpdateTime = tokenUpdateTime;
     }
 
     /**
      * @return credentials_expiring_date
      */
-    public Date getCredentialsExpiringDate() {
-        return credentialsExpiringDate;
+    public String getTokenExpiringTime() {
+        return tokenExpiringTime;
     }
 
     /**
-     * @param credentialsExpiringDate
      */
-    public void setCredentialsExpiringDate(Date credentialsExpiringDate) {
-        this.credentialsExpiringDate = credentialsExpiringDate;
+    public void setTokenExpiringTime(String tokenExpiringTime) {
+        this.tokenExpiringTime = tokenExpiringTime;
     }
 
     /**

@@ -1,5 +1,6 @@
 package io.renren.modules.sys.service;
 
+import io.renren.modules.model.User;
 import io.renren.modules.sys.entity.SysUserEntity;
 import io.renren.modules.sys.entity.SysUserTokenEntity;
 
@@ -17,11 +18,11 @@ public interface ShiroService {
      */
     Set<String> getUserPermissions(long userId);
 
-    SysUserTokenEntity queryByToken(String token);
+    User queryByToken(String token);
 
     /**
      * 根据用户ID，查询用户
      * @param userId
      */
-    SysUserEntity queryUser(Long userId);
+    User queryUser(Long userId);
 }

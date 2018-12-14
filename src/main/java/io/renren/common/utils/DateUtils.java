@@ -23,6 +23,8 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Date;
 
 /**
@@ -37,7 +39,41 @@ public class DateUtils {
 	public final static String DATE_PATTERN = "yyyy-MM-dd";
 	/** 时间格式(yyyy-MM-dd HH:mm:ss) */
 	public final static String DATE_TIME_PATTERN = "yyyy-MM-dd HH:mm:ss";
+    public static final String CIVIL_BUSINESS_CODE = "100";
+    public static final String MONTH_PATTERN = "yyyy-MM";
+    public static final String TIME_PATTERN = "HH:mm:ss";
+    public static final Long INITIAL_STATE = 0L;
+    public static final Long INDATE_FINISH = 1L;
+    public static final Long OUTDATE_FINISH = 2L;
+    public static final Long INDATE_PROCEED = 3L;
+    public static final Long OUTDATE_PROCEED = 4L;
+    public static final Long INDATE_WAITING = 5L;
+    public static final Long OUTDATE_WAITING = 6L;
+    public static final Long NONEED = 7L;
+    public static final Integer WAITING = 0;
+    public static final Integer PROCEED = 1;
+    public static final Integer FINISH = 2;
 
+
+    public static String getLocalDateTime() {
+        return LocalDateTime.now().format(java.time.format.DateTimeFormatter.ofPattern(DATE_TIME_PATTERN));
+    }
+
+    public static String getLocalDate() {
+        return java.time.LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern(DATE_PATTERN));
+    }
+
+    public static String getLocalTime() {
+        return LocalTime.now().format(java.time.format.DateTimeFormatter.ofPattern(TIME_PATTERN));
+    }
+
+    public static String getLocalYM() {
+        return LocalDateTime.now().format(java.time.format.DateTimeFormatter.ofPattern(MONTH_PATTERN));
+    }
+
+    public static String getDateTimeByPattern(String pattern) {
+        return LocalDateTime.now().format(java.time.format.DateTimeFormatter.ofPattern(pattern));
+    }
     /**
      * 日期格式化 日期格式为：yyyy-MM-dd
      * @param date  日期

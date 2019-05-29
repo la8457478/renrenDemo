@@ -27,7 +27,7 @@ spring:
     database: 0
     host: localhost
     port: 6379
-    password:    # 密码（默认为空）
+    password: 123456   # 密码（默认为空）
     timeout: 6000ms  # 连接超时时长（毫秒）
     jedis:
       pool:
@@ -62,3 +62,6 @@ renren:
 mybatis:
   type-aliases-package: io.renren.modules.model
   mapper-locations: classpath:mapper/*.xml
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true

@@ -16,7 +16,7 @@
 
 package io.renren.common.utils;
 
-import com.baomidou.mybatisplus.plugins.Page;
+import com.github.pagehelper.Page;
 
 import java.io.Serializable;
 import java.util.List;
@@ -60,10 +60,10 @@ public class PageUtils implements Serializable {
 	 * 分页
 	 */
 	public PageUtils(Page<?> page) {
-		this.list = page.getRecords();
+		this.list = page;
 		this.totalCount = (int)page.getTotal();
-		this.pageSize = page.getSize();
-		this.currPage = page.getCurrent();
+		this.pageSize = page.getPageSize();
+		this.currPage = page.getPageNum();
 		this.totalPage = (int)page.getPages();
 	}
 

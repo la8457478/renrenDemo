@@ -16,7 +16,8 @@
 
 package io.renren.modules.job.dao;
 
-import com.baomidou.mybatisplus.mapper.BaseMapper;
+
+import io.renren.common.base.mapper.CommonMapper;
 import io.renren.modules.job.entity.ScheduleJobEntity;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -29,7 +30,7 @@ import java.util.Map;
  * @since 1.2.0 2016-11-28
  */
 @Mapper
-public interface ScheduleJobDao extends BaseMapper<ScheduleJobEntity> {
+public interface ScheduleJobDao extends CommonMapper<ScheduleJobEntity> {
 	
 	/**
 	 * 批量更新状态

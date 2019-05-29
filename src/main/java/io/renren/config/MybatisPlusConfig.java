@@ -16,7 +16,8 @@
 
 package io.renren.config;
 
-import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
+import com.github.pagehelper.PageInterceptor;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -33,7 +34,7 @@ public class MybatisPlusConfig {
      * 分页插件
      */
     @Bean
-    public PaginationInterceptor paginationInterceptor() {
-        return new PaginationInterceptor();
+    public PageInterceptor pageInterceptor() {
+        return new PageInterceptor();
     }
 }

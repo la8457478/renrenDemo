@@ -20,7 +20,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -93,18 +93,11 @@
     <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.25.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.25.Final" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-configuration-processor:2.0.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: com.baomidou:mybatisplus-spring-boot-starter:1.0.5" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.0.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.38" level="project" />
+    <orderEntry type="library" name="Maven: tk.mybatis:mapper-spring-boot-starter:2.0.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.0.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:2.7.9" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:5.0.7.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus:2.2.0" level="project" />
-    <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-support:2.2.0" level="project" />
-    <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-core:2.2.0" level="project" />
-    <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:1.1" level="project" />
-    <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-generate:2.2.0" level="project" />
-    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.38" level="project" />
-    <orderEntry type="library" name="Maven: tk.mybatis:mapper-spring-boot-starter:2.0.4" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.4.6" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:1.3.2" level="project" />
     <orderEntry type="library" name="Maven: tk.mybatis:mapper-core:1.0.5" level="project" />
@@ -117,6 +110,7 @@
     <orderEntry type="library" name="Maven: com.alibaba:druid-spring-boot-starter:1.1.10" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:druid:1.1.10" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.0.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.quartz-scheduler:quartz:2.3.0" level="project" />
     <orderEntry type="library" name="Maven: com.mchange:mchange-commons-java:0.2.11" level="project" />
     <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
@@ -160,9 +154,9 @@
     <orderEntry type="library" name="Maven: org.springframework.plugin:spring-plugin-metadata:1.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.mapstruct:mapstruct:1.1.0.Final" level="project" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-swagger-ui:2.7.0" level="project" />
-    <orderEntry type="library" name="Maven: com.qiniu:qiniu-java-sdk:7.2.17" level="project" />
-    <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.9.1" level="project" />
-    <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.13.0" level="project" />
+    <orderEntry type="library" name="Maven: com.qiniu:qiniu-java-sdk:7.2.18" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.11.0" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.14.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.5" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun.oss:aliyun-sdk-oss:2.8.3" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.5" level="project" />
@@ -179,6 +173,7 @@
     <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:1.3.2" level="project" />
     <orderEntry type="library" name="Maven: com.github.pagehelper:pagehelper-spring-boot-autoconfigure:1.2.10" level="project" />
     <orderEntry type="library" name="Maven: com.github.pagehelper:pagehelper:5.1.8" level="project" />
+    <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:1.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.16.20" level="project" />
   </component>
 </module>

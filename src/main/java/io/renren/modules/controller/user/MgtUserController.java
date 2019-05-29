@@ -34,7 +34,7 @@ public class MgtUserController extends BaseController {
             params.put("createUserId", getUserId());
         }
         PageHelper.startPage(params);
-        List<User> userList = userService.selectAll();
+        List<User> userList = userService.getAll();
         return ResultUtil.returnQuery(new PageInfo<User>(userList));
     }
 

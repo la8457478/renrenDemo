@@ -6,7 +6,7 @@ import io.renren.common.utils.HttpContextUtils;
 import io.renren.common.utils.IPUtils;
 import io.renren.modules.sys.entity.SysLogEntity;
 import io.renren.modules.sys.entity.SysUserEntity;
-import io.renren.modules.sys.service.SysLogService;
+import io.renren.modules.service.SysLogService;
 import org.apache.shiro.SecurityUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -90,6 +90,6 @@ public class SysLogAspect {
 		sysLog.setTime(time);
 		sysLog.setCreateDate(new Date());
 		//保存系统日志
-		sysLogService.insert(sysLog);
+		sysLogService.save(sysLog);
 	}
 }

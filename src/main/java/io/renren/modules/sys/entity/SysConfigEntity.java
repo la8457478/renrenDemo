@@ -16,10 +16,15 @@
 
 package io.renren.modules.sys.entity;
 
-import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableName;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+
+import lombok.Builder;
+import lombok.Data;
+import tk.mybatis.mapper.annotation.KeySql;
+import tk.mybatis.mapper.code.IdentityDialect;
 
 /**
  * 系统配置信息
@@ -28,43 +33,17 @@ import javax.validation.constraints.NotBlank;
  * @email sunlightcs@gmail.com
  * @date 2016年12月4日 下午6:43:36
  */
-@TableName("sys_config")
+@Table(name = "sys_config")
+@Data
+@Builder
 public class SysConfigEntity {
-	@TableId
-	private Long id;
+	@Id
+	@KeySql(dialect = IdentityDialect.MYSQL)	private Long id;
 	@NotBlank(message="参数名不能为空")
 	private String paramKey;
 	@NotBlank(message="参数值不能为空")
 	private String paramValue;
 	private String remark;
+	private Integer status;
 
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getParamKey() {
-		return paramKey;
-	}
-
-	public void setParamKey(String paramKey) {
-		this.paramKey = paramKey;
-	}
-
-	public String getParamValue() {
-		return paramValue;
-	}
-
-	public void setParamValue(String paramValue) {
-		this.paramValue = paramValue;
-	}
-
-	public String getRemark() {
-		return remark;
-	}
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
 }

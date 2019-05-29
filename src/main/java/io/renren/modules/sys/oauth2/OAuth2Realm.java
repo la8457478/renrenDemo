@@ -2,9 +2,7 @@ package io.renren.modules.sys.oauth2;
 
 import io.renren.common.utils.DateUtils;
 import io.renren.modules.model.User;
-import io.renren.modules.sys.entity.SysUserEntity;
-import io.renren.modules.sys.entity.SysUserTokenEntity;
-import io.renren.modules.sys.service.ShiroService;
+import io.renren.modules.service.ShiroService;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -13,11 +11,9 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.swing.text.DateFormatter;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
-import java.util.Set;
 
 /**
  * 认证

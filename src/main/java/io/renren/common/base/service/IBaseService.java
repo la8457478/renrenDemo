@@ -7,50 +7,67 @@ import org.apache.ibatis.session.RowBounds;
 import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 public interface IBaseService<T> {
 
 
     CommonMapper<T> getMapper();
 
-    T selectOne(T record);
+    T getOne(T record);
 
-    List<T> select(T record);
+    List<T> getByRecord(T record);
 
-    List<T> selectAll();
+    List<T> getAll();
 
-    int selectCount(T record);
+    int count(T record);
 
-    T selectByPrimaryKey(Object key);
+    T get(Object key);
 
     boolean existsWithPrimaryKey(Object key);
 
-    int insert(T record);
+    int save(List<T> records);
 
-    int insertSelective(T record);
+    int save(T record);
 
-    int updateByPrimaryKey(T record);
 
-    int updateByPrimaryKeySelective(T record);
+    int update(T record);
+
+    int updateIgnoreNull(T record);
 
     int delete(T record);
 
-    int deleteByPrimaryKey(Object key);
+    int deleteById(Object key);
 
-    List<T> selectByExample(Object example);
+     int deleteByIds(String ids);
 
-    T selectOneByExample(Object example);
+    int deleteByIds(Long[] ids);
 
-    int selectCountByExample(Object example);
+    List<T> getByExample(Object example);
+
+    T getOneByExample(Object example);
+
+    int countByExample(Object example);
 
     int deleteByExample(Object example);
+
+    int deleteByParams(Map<String, Object> params);
 
     int updateByExample(@Param("record") T record, @Param("example") Object example);
 
     int updateByExampleSelective(@Param("record") T record, @Param("example") Object example);
 
-    List<T> selectByExampleAndRowBounds(Object example, RowBounds rowBounds);
+    List<T> getByExampleAndRowBounds(Object example, RowBounds rowBounds);
 
-    List<T> selectByRowBounds(T record, RowBounds rowBounds);
+    List<T> getByRowBounds(T record, RowBounds rowBounds);
 
+    List<T> queryByParams(Map<String, Object> params);
+
+    List<T> queryByProperty(String property, Object value);
+
+    int countByParams(Map<String, Object> params);
+
+    List<T> queryByParamsDistinc(Map<String, Object> params);
+
+    T getOneByParams(Map<String, Object> params);
 }

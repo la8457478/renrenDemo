@@ -20,7 +20,7 @@ package io.renren.modules.oss.cloud;
 import io.renren.common.utils.ConfigConstant;
 import io.renren.common.utils.Constant;
 import io.renren.common.utils.SpringContextUtils;
-import io.renren.modules.sys.service.SysConfigService;
+import io.renren.modules.service.SysConfigService;
 
 /**
  * 文件上传Factory

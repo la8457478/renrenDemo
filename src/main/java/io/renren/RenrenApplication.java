@@ -12,7 +12,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
-@MapperScan(basePackages="io.renren.modules.mapper")
+@MapperScan(basePackages={"io.renren.modules.mapper","io.renren.modules.oss.dao"})
 @Import({DynamicDataSourceConfig.class})
 public class RenrenApplication extends SpringBootServletInitializer {
 
